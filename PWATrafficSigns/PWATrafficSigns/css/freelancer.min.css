@@ -428,6 +428,11 @@ li {
     padding-bottom: 200px;
     margin-top:80px;
 }
+#portfoliodark {
+    padding-bottom: 200px;
+    margin-top: 80px;
+    background: black;
+}
 
 .icons {
     max-height: 90px;
@@ -498,3 +503,22 @@ li {
             background-color: black;
             color:white;
         }
+
+        .camerabut {
+            border-radius: 50%;
+            background-color: transparent;
+            border: medium;
+            border-width: 50px;
+            color: white;
+        }
+
+#mapdiv {
+    margin: 0;
+    height: 500px;
+}
+
+#traffic-b, #transit-b, #bike-b {
+    background: #FCDA05;
+    color: white;
+}
+

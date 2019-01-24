@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,16 +7,18 @@
     <meta name="author" content="">
     <title>Traffic Book</title>
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="/css/freelancer.min.css" rel="stylesheet">
+    <link href="/manifest.json" rel="manifest">
+    <script src="/app.js"></script>
 </head>
 
 <body id="page-top">
@@ -46,6 +48,7 @@
         <div class="container">
             <h2 class="text-center text-uppercase text-secondary mb-0">Road traffic signs</h2>
             <hr class="star-dark mb-5">
+            <p class="text-center">Learn the different traffic signs, rules and road markings in detail by clicking on a category below:</p>
             <div class="row">
                 <div class="col-md-6 col-lg-4">
                     <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
@@ -225,14 +228,13 @@
         </a>
     </div>
 
-
     <!-- Icon bar -->
     <div class="icon-bar bg-secondary fixed-bottom">
         <a href="/index.html"><h4><i class="fa fa-home"></i></h4></a>
         <a class="active" href="/trafficsigns.html"><h4><i class="fa fa-traffic-light"></i></h4></a>
-        <a href="#"><h4><i class="fa fa-book"></i></h4></a>
-        <a href="#"><h4><i class="fas fa-camera"></i></h4></a>
-        <a href="#"><h4><i class="fa fa-map"></i></h4></a>
+        <a href="/reviewer.html"><h4><i class="fa fa-book"></i></h4></a>
+        <a href="/camera.html"><h4><i class="fas fa-camera"></i></h4></a>
+        <a href="/map.html"><h4><i class="fa fa-map"></i></h4></a>
     </div>
 
     <!-- Portfolio Modals -->
@@ -1577,7 +1579,7 @@
                                 <h4>Signs when one approaches an intersection or junction</h4>
                                 <table class="table">
                                     <tr>
-                                        
+
                                         <td><img class="img-fluid" src="/img/portfolio/turnline.png" /></td>
                                         <td><img class="img-fluid" src="/img/portfolio/parkingbay.png" /></td>
                                     </tr>
@@ -1599,8 +1601,8 @@
                                     <tr>
                                         <td>
                                             <b>Loading and Unloading Bay Lane Line</b>
-                                            - is an unbroken white line used to indicate the proper location of 
-                                            loading and unloading zone of public utility vehicles preferably 
+                                            - is an unbroken white line used to indicate the proper location of
+                                            loading and unloading zone of public utility vehicles preferably
                                             with parking restriction
                                         </td>
                                     </tr>
@@ -1669,12 +1671,12 @@
                                     <tr>
                                         <td>
                                             <b>Railroad Crossing Ahead</b>
-                                           
+
                                         </td>
                                     </tr>
 
                                 </table>
-                                
+
                             </p>
                         </div>
                         <div id="Zones" class="w3-container w3-border city " style="display:none">
@@ -1756,7 +1758,7 @@
                                     <tr>
                                         <td>
                                             <b>
-                                               Substitution of Lane Lines (Cat eyes)
+                                                Substitution of Lane Lines (Cat eyes)
                                             </b>
                                         </td>
                                     </tr>
@@ -1772,9 +1774,8 @@
                     Close <i class="fa fa-times"></i>
                 </a>
             </div>
+            </div>
         </div>
-    </div>
-
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -1782,10 +1783,33 @@
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
+    <script>
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+
+        function openCity(evt, cityName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " w3-red";
+        }
+    </script>
 </body>
 </html>
